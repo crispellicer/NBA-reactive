@@ -1,0 +1,12 @@
+com\svalero\reactive\api\task\TeamTask.class
+com\svalero\reactive\api\App.class
+com\svalero\reactive\api\service\NBAApi.class
+com\svalero\reactive\api\model\Player.class
+com\svalero\reactive\api\controller\AppController.class
+com\svalero\reactive\api\service\NBAService.class
+com\svalero\reactive\api\model\Meta.class
+com\svalero\reactive\api\model\DataTeam.class
+com\svalero\reactive\api\model\DataPlayer.class
+com\svalero\reactive\api\util\R.class
+com\svalero\reactive\api\model\Team.class
+com\svalero\reactive\api\task\PlayerTask.class
