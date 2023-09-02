@@ -19,7 +19,6 @@ public class PlayerTask extends Task<Integer> {
 
     @Override
     protected Integer call() throws Exception {
-
         this.pbProgress.setVisible(true);
         NBAService nbaService = new NBAService();
         nbaService.getPlayers().subscribe(playerUser);

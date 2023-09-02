@@ -22,13 +22,6 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="284.0">
                      <children>
-                        <Button fx:id="btLoadAllTeams" mnemonicParsing="false" onAction="#loadAllTeams" prefHeight="44.0" prefWidth="125.0" text="Teams">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <HBox.margin>
-                              <Insets left="10.0" top="5.0" />
-                           </HBox.margin></Button>
                         <Button fx:id="btLoadAllPlayers" mnemonicParsing="false" onAction="#loadAllPlayers" prefHeight="46.0" prefWidth="125.0" text="Players">
                            <opaqueInsets>
                               <Insets />
@@ -36,16 +29,38 @@
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin></Button>
+                        <Button fx:id="btLoadAllTeams" mnemonicParsing="false" onAction="#loadAllTeams" prefHeight="44.0" prefWidth="125.0" text="Teams">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin></Button>
                      </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="709.0" spacing="10.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="709.0">
+                     <children>
+                        <ProgressBar fx:id="pbProgress" prefWidth="200.0" progress="0.0">
+                           <HBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ProgressBar>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="104.0" prefWidth="709.0" spacing="10.0">
                      <children>
                         <Button fx:id="btDeletePlayer" mnemonicParsing="false" onAction="#deletePlayer" prefHeight="21.0" prefWidth="94.0" text="Delete player">
                            <HBox.margin>
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <TextField fx:id="tfIdPlayer" promptText="ID player to delete">
+                        <TextField fx:id="tfIdPlayer" prefHeight="21.0" prefWidth="94.0" promptText="ID player to delete">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
@@ -58,20 +73,15 @@
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <ProgressBar fx:id="pbProgress" prefWidth="200.0" progress="0.0">
-                           <HBox.margin>
-                              <Insets left="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ProgressBar>
                      </children>
                   </HBox>
-                  <TabPane prefHeight="331.0" prefWidth="709.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane prefHeight="268.0" prefWidth="709.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Players">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="600.0">
                                  <children>
-                                    <TextArea fx:id="playersArea" prefHeight="257.0" prefWidth="709.0" />
+                                    <TextArea fx:id="playersArea" layoutY="1.0" prefHeight="262.0" prefWidth="709.0" />
                                  </children>
                               </AnchorPane>
                         </content>

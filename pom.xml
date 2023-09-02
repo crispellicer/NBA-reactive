@@ -83,6 +83,23 @@
                 <configuration>
                     <mainClass>com.svalero.reactive.api.App</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>run</id>
+                        <configuration>
+                            <mainClass>com.svalero.reactive.api.App</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>debug</id>
+                        <configuration>
+                            <mainClass>com.svalero.reactive.api.App</mainClass>
+                            <options>
+                                <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8002</option>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

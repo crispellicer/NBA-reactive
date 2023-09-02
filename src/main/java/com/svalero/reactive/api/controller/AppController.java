@@ -28,6 +28,7 @@ public class AppController {
     public Button btDeletePlayer;
     public Button btExport;
 
+
     public TextField tfIdPlayer;
     public TextArea playersArea;
     public ListView teamsList;
@@ -52,22 +53,33 @@ public class AppController {
         this.players = new ArrayList<>();
         playersArea.setText("");
 
+
         Consumer<DataPlayer> userPlayer = (dataPlayer -> {
+
             Platform.runLater(() -> {
-                pbProgress.setProgress(0.5);
+                pbProgress.progressProperty().unbind();
+                pbProgress.progressProperty().bind(playerTask.progressProperty());
             });
 
-            String text;
-            text = playersArea.getText() + "\n";
+            /*Platform.runLater(() -> {
+                pbProgress.setProgress(0);
+            });*/
+
+            String text = playersArea.getText() + "\n";
+            //double length = 1/dataPlayer.getData().toArray().length;
             for (Player player : dataPlayer.getData()) {
                 Thread.sleep(100);
                 playersArea.appendText("ID: " + player.getId() + " Name: " + player.getFirst_name() + " Surname: " + player.getLast_name() + " Position: " + player.getPosition() + "Team: " + player.getTeam() + "\n\n");
                 this.players.add(player);
+                /*Platform.runLater(() -> {
+                    this.pbProgress.setProgress(length * 1/this.players.toArray().length);
+                });*/
             }
+            this.pbProgress.setVisible(false);
 
-            Platform.runLater(() -> {
+            /*Platform.runLater(() -> {
                 this.pbProgress.setProgress(1.0);
-            });
+            });*/
         });
         this.playerTask = new PlayerTask(userPlayer, pbProgress);
         new Thread(playerTask).start();
@@ -79,20 +91,28 @@ public class AppController {
         this.teams = new ArrayList<String>();
 
         Consumer<DataTeam> userTeam = (dataTeam -> {
+
             Platform.runLater(() -> {
-                pbProgress.setProgress(0.5);
+                pbProgress.progressProperty().unbind();
+                pbProgress.progressProperty().bind(teamTask.progressProperty());
             });
+
+            /*Platform.runLater(() -> {
+                pbProgress.setProgress(0);
+            });*/
 
             for (Team team : dataTeam.getData()) {
-                this.teamsResults.add("Name: " + team.getName() + " Abrev: " + team.getAbbreviation() + " Conference: " + team.getConference() + " Division: " +
+                Thread.sleep(100);
+                this.teamsResults.add(" Name: " + team.getName() + " Abbrev: " + team.getAbbreviation() + " Conference: " + team.getConference() + " Division: " +
                         team.getDivision() + " Full name: " + team.getFull_name());
             }
-            Platform.runLater(() -> {
+            /*Platform.runLater(() -> {
                 pbProgress.setProgress(1.0);
-            });
+            });*/
+            this.pbProgress.setVisible(false);
         });
 
-        this.teamTask = new TeamTask(userTeam);
+        this.teamTask = new TeamTask(userTeam, pbProgress);
         new Thread(teamTask).start();
     }
 
