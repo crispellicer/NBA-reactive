@@ -67,20 +67,20 @@
                   </HBox>
                   <TabPane prefHeight="331.0" prefWidth="709.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                      <Tab text="Teams">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="309.0" prefWidth="709.0">
-                                 <children>
-                                    <ListView fx:id="teamsList" layoutY="2.0" prefHeight="341.0" prefWidth="710.0" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </Tab>
                       <Tab text="Players">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="600.0">
                                  <children>
                                     <TextArea fx:id="playersArea" prefHeight="257.0" prefWidth="709.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Teams">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="309.0" prefWidth="709.0">
+                                 <children>
+                                    <ListView fx:id="teamsList" layoutY="2.0" prefHeight="341.0" prefWidth="710.0" />
                                  </children>
                               </AnchorPane>
                         </content>

@@ -100,7 +100,7 @@ public class AppController {
     @FXML
     public void deletePlayer(ActionEvent event) {
         int playerId = Integer.parseInt(tfIdPlayer.getText());
-        this.players.remove(playerId);
+        players.removeIf(player -> player.getId() == playerId);
         this.playersArea.setText("");
         for (Player player : this.players) {
             this.playersArea.appendText(player.getId() + " " + player.getFirst_name() + " " + player.getLast_name() + " " + player.getPosition() + " " + player.getTeam() + "\n\n");
