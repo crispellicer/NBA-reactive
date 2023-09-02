@@ -26,7 +26,7 @@ public class AppController {
     public Button btLoadAllPlayers;
     public Button btLoadAllTeams;
     public Button btDeletePlayer;
-    public Button btExport;
+    public Button btExportCSV;
 
 
     public TextField tfIdPlayer;
@@ -42,12 +42,12 @@ public class AppController {
     //Inicializamos
     @FXML
     public void initialize() {
-        pbProgress.setProgress(0.0);
+        //pbProgress.setProgress(0);
         teamsResults = FXCollections.observableArrayList();
         this.teamsList.setItems(this.teamsResults); //suscripcion
     }
 
-    //Evento que se ejecuta al presionar el boton "players"
+    //Cargar la lista de jugadores con sus atributos
     @FXML
     public void loadAllPlayers(ActionEvent event) {
         this.players = new ArrayList<>();
@@ -85,7 +85,7 @@ public class AppController {
         new Thread(playerTask).start();
     }
 
-    //Evento que se ejecuta al presionar el boton "teams"
+    //Cargar la lista de equipos con sus atributos
     @FXML
     public void loadAllTeams(ActionEvent event) {
         this.teams = new ArrayList<String>();
@@ -127,11 +127,11 @@ public class AppController {
         }
     }
 
-    //Exportar a CSV los equipos
+    //Exportar a CSV la lista de equipos mostrada
     @FXML
     public void exportCSV(ActionEvent event) {
         File outputFile = new File(System.getProperty("user.dir") + System.getProperty("file.separator")
-                + "equipos.csv");
+                + "teams.csv");
         try {
             FileWriter writer = new FileWriter(outputFile);
             CSVWriter csvWriter = new CSVWriter(writer);

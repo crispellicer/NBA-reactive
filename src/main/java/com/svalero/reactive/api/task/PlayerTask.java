@@ -24,5 +24,4 @@ public class PlayerTask extends Task<Integer> {
         nbaService.getPlayers().subscribe(playerUser);
         return null;
     }
-
 }

@@ -18,18 +18,18 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="44.0" prefWidth="709.0">
          <children>
-            <VBox prefHeight="376.0" prefWidth="709.0">
+            <VBox prefHeight="376.0" prefWidth="709.0" spacing="10.0">
                <children>
-                  <HBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="284.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="709.0">
                      <children>
-                        <Button fx:id="btLoadAllPlayers" mnemonicParsing="false" onAction="#loadAllPlayers" prefHeight="46.0" prefWidth="125.0" text="Players">
+                        <Button fx:id="btLoadAllPlayers" mnemonicParsing="false" onAction="#loadAllPlayers" prefHeight="27.0" prefWidth="125.0" text="PLAYERS">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin></Button>
-                        <Button fx:id="btLoadAllTeams" mnemonicParsing="false" onAction="#loadAllTeams" prefHeight="44.0" prefWidth="125.0" text="Teams">
+                        <Button fx:id="btLoadAllTeams" mnemonicParsing="false" onAction="#loadAllTeams" prefHeight="44.0" prefWidth="125.0" text="TEAMS">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -40,8 +40,11 @@
                      <padding>
                         <Insets top="10.0" />
                      </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="709.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="103.0" prefWidth="709.0">
                      <children>
                         <ProgressBar fx:id="pbProgress" prefWidth="200.0" progress="0.0">
                            <HBox.margin>
@@ -55,12 +58,12 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefHeight="104.0" prefWidth="709.0" spacing="10.0">
                      <children>
-                        <Button fx:id="btDeletePlayer" mnemonicParsing="false" onAction="#deletePlayer" prefHeight="21.0" prefWidth="94.0" text="Delete player">
+                        <Button fx:id="btDeletePlayer" mnemonicParsing="false" onAction="#deletePlayer" prefHeight="25.0" prefWidth="94.0" text="Delete player">
                            <HBox.margin>
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <TextField fx:id="tfIdPlayer" prefHeight="21.0" prefWidth="94.0" promptText="ID player to delete">
+                        <TextField fx:id="tfIdPlayer" prefHeight="25.0" prefWidth="94.0" promptText="ID player to delete">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
@@ -70,7 +73,7 @@
                         </TextField>
                         <Button fx:id="btExportCSV" mnemonicParsing="false" onAction="#exportCSV" prefHeight="20.0" prefWidth="110.0" text="Export teams CSV">
                            <HBox.margin>
-                              <Insets left="10.0" top="10.0" />
+                              <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
