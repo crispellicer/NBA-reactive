@@ -1,7 +1,10 @@
 # NBA-reactive
 
+### Aplicación para la asignatura de Programación de Servicios y Procesos
+
 Durante el desarrollo de la aplicación se han llevado a cabo las siguientes funcionalidades:
-- [x] La aplicación deberá utilizar técnicas de programación reactiva utilizando la librería RxJava en algún momento
+
+- [x] La aplicación deberá utilizar técnicas de programación reactiva utilizando la librería RxJava en algún momento.
 - [x] Se mostrará un listado de datos utilizando dos operaciones diferentes de la API.
 - [x] Se mostrará información detallada de los items de los dos listados anteriores.
 - [x] Todas las operaciones de carga de datos se harán en segundo plano y se mostrará una barra de progreso o similar al usuario.
